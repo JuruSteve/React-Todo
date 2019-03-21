@@ -1,7 +1,6 @@
 import React from "react";
 const Todo = props => {
-  console.log(props);
-  return <li>{props.taskItem.task.completed}</li>;
+  return <li>{props.taskItem.task}</li>;
 };
 
 export default Todo;

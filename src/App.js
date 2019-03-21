@@ -26,12 +26,19 @@ class App extends React.Component {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   handleChange = e => {
-    console.log("input");
     this.setState({ newTask: e.target.value });
   };
   submitTasks = e => {
     e.preventDefault();
-    this.setState({ todosList: [...this.state.todosList, this.state.newTask] });
+    const newTodo = {
+      completed: false,
+      id: 1528817084456,
+      task: this.state.newTask
+    };
+    console.log(newTodo);
+    this.setState({
+      toDos: [...this.state.toDos, newTodo]
+    });
   };
   render() {
     return (
