@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+.app {
+  margin: 0 auto;
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    #6fd5b0,
+    #00b9c0,
+    #0097d6,
+    #006fd8,
+    #3f37b3
+  );
+}
+
+.container {
+  min-height: 100vh;
+
+  display: flex;
+}
+.header {
+  background-color: #3f37b3;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+}

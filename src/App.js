@@ -1,6 +1,7 @@
 import React from "react";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
+import "./App.css";
 
 const todosList = [
   {
@@ -64,19 +65,6 @@ class App extends React.Component {
     }
   };
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   debugger;
-  //   localStorage.setItem("tasks", nextState.toDos);
-  //   debugger;
-
-  //   return nextState.todos !== this.state.todos;
-  // }
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (this.state.toDos !== prevState.toDos) {
-  //     localStorage.setItem("tasks", this.state.toDos);
-  //   }
-  // };
-
   completeTask = id => {
     this.setState({
       toDos: this.state.toDos.map(todo => {
@@ -99,13 +87,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>ToDo App</h1>
-        <TodoForm
-          onChange={this.handleChange}
-          submitTasks={this.submitTasks}
-          clearCompletedTasks={this.clearCompletedTasks}
-        />
-        <TodoList completeTask={this.completeTask} todos={this.state.toDos} />
+        <div className="header">
+          <h1 className="Title">ToDo App</h1>
+        </div>
+        <div className="container">
+          <TodoForm
+            onChange={this.handleChange}
+            submitTasks={this.submitTasks}
+            clearCompletedTasks={this.clearCompletedTasks}
+            inputField={this.state.newTask}
+          />
+          <TodoList completeTask={this.completeTask} todos={this.state.toDos} />
+        </div>
       </div>
     );
   }

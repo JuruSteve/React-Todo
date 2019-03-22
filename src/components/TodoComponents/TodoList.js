@@ -5,12 +5,16 @@ import Todo from "./Todo";
 
 const TodoList = props => {
   return (
-    <div>
-      <h4>Todo List</h4>
+    <div className="todo-list">
+      <h3>Todo List</h3>
       <ul>
         {props.todos.map((task, i) => {
           return (
-            <Todo key={i} taskItem={task} completeTask={props.completeTask} />
+            <Todo
+              key={i}
+              taskItem={task ? task : "Please Enter A Task"}
+              completeTask={props.completeTask}
+            />
           );
         })}
       </ul>
